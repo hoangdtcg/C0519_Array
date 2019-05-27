@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bang caro</title>
+</head>
+<body>
+      <input type="button" onclick="nguoichoi1()" value="nguoichoi1">
+      <input type="button" onclick="nguoichoi2()" value="nguoichoi2">
+      <p id="caro" ></p>
+<script>
+    let b = document.getElementById("caro");
+    let board = [];
+    let data = "";
+    let sout;
+    sout = "<table border='1' width='200' height='200' cellspacing='0' cellpadding='3'>"
+    for (let i = 0; i < 10; i++){
+        board[i] = [".", ".", ".", ".", ".", ".", ".", ".", ".", "."];
+    }
+    for (let i = 0; i < 10; i++) {
+        data += "</br>";
+        sout = sout + "<tr>";
+        for (let j = 0; j < 10; j++) {
+            sout = sout + "<td>"+"</td>";
+            data += board[i][j];
+        }
+        sout = sout + "</tr>";
+    }sout = sout + "</table>";
+    b.innerHTML = sout;
+    function nguoichoi1() {
+        let vitriX = prompt("X : ");
+        let vitriY = prompt("Y : ");
+        data = "";
+        board[vitriX][vitriY] = "X";
+        for (let i = 0; i < 10; i++) {
+            data += "</br>";
+            for (let j = 0; j < 10; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        b.innerHTML = "</hr>" + data;
+
+        for (i = 0; i < 10; i++) {
+            for (j = 0; j < 10; j++) {
+                if (board[i][j] === "X" && board[i + 1][j] === "X" && board [i + 2][j] === "X") {
+                    alert(" u win ");
+                } else if (board [i][j] === "X" && board [i][j + 1] === "X" && board [i][j + 2] === "X") {
+                    alert("u win");
+                } else if (board [i][j] === "X" && board [i + 1][j + 1] === "X" && board [i + 2][j + 2] === "X") {
+                    alert("u win");
+                }
+            }
+        }
+    }
+    function nguoichoi2() {
+        let vitriA = prompt("A : ");
+        let vitriB = prompt("B : ");
+        data = "";
+        board[vitriA][vitriB] = "O";
+        for (let i = 0; i < 10; i++) {
+            data += "</br>";
+            for (let j = 0; j < 10; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        b.innerHTML = "</hr>" + data
+
+        for (i = 0; i < 10; i++) {
+            for (j = 0; j < 10; j++) {
+                if (board[i][j] === "O" && board[i][j + 1] === "O" && board [i][j + 2] === "O") {
+                    alert(" u win ");
+                } else if (board [i][j] === "O" && board [i + 1][j] === "O" && board [i + 2][j] === "O") {
+                    alert("u win");
+                } else if (board [i][j] === "O" && board [i + 1][j + 1] === "O" && board [i + 2][j + 2] === "O") {
+                    alert("u win");
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

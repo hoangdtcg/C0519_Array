@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faking Textarea</title>
+</head>
+    <center><h2>GO GO GO</h2>
+    <form name="HuyThong">
+        <textarea name="txt" cols="40" rows="10" onkeydown="typeTextarea();"></textarea>
+    </form></center>
+<body>
+<script>
+    let a= new Array(),
+        n= "";
+    a[1]='Đ';a[2]='Ầ';a[3]='U';a[4]=' ';a[5]='Đ';a[6]='Í';a[7]='T';a[8]=' ';a[9]='2';a[10]='L';a[11]='Í';a[12]='T';a[13]=' ';a[14]='K';a[15]='H';a[16]='Ô';a[17]='N';a[18]='G';a[19]=' ';a[20]='A';a[21]='N';a[22]='H';
+    function typeTextarea(){
+        t = document.HuyThong.txt.value;
+        j = t.length;
+        if(j > 0)
+        {
+            for(let i=1; i<=j; i++)
+            {
+                n = n + a[i];
+                if(i == 23)
+                {
+                    document.HuyThong.txt.value = "";
+                    n = "";
+                }
+            }
+        }
+        document.HuyThong.txt.value = n;
+        n="";
+        setTimeout("typeTextarea()", 1);
+    }
+</script>
+</body>
+</html>
