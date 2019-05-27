@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="nhap"> EngLish <br>
+<p id="dich"></p>
+<button onclick="Change()">Dich</button>
+<script>
+
+    let arrEnlish = ["aplle", "orange", "banana"];
+    let arrVietNam = ["tao", "cam", "chuoi"];
+
+    function Change() {
+        let a = document.getElementById("nhap").value;
+
+        for (let i = 0; i < arrEnlish.length; i++) {
+            if (a === arrEnlish[i]) {
+                a = arrVietNam[i];
+            }
+        }
+        document.getElementById("dich").innerHTML = a;
+
+
+    }
+
+
+</script>
+
+</body>
+</html>
