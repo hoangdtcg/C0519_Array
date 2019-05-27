@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type = "text" id = "chuoi" placeholder="Nhap vao mot chuoi">
+<button onclick="countWord()">CountWords</button>
+<script>
+    function countWord(){
+        let a = document.getElementById("chuoi").value;
+        let b = a.split(" ").length;
+        document.getElementById("chuoi1").innerHTML = "So tu trong chuoi la : " + b;
+    }
+</script>
+<p id = "chuoi1"></p>
+</body>
+</html>
