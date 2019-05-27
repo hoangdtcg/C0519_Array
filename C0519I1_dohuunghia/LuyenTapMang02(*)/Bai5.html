@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<input type="text" id = "chuoi" placeholder="Nhap chuoi thu nhat">
+<input type="text" id = "chuoi1" placeholder="Nhap chuoi thu hai">
+<button onclick="check()">Check</button>
+<body>
+<script>
+    function check(){
+        let arr = document.getElementById("chuoi").value;
+        let str = document.getElementById("chuoi1").value;
+        let a = arr.length;
+        let b = str.length;
+        let output = "";
+        let result = true;
+        if (a !== b){
+            result = false;
+        } else {
+            for ( let i = 0; i < a; i++){
+                if( arr[i] !== str[i]){
+                    result = false;
+                }
+            }
+        }
+        if (result === true){
+            output = "Hai chuoi giong nhau";
+        } else {
+            output = "Hai chuoi khong giong nhau";
+        }
+        document.getElementById("chuoi2").innerHTML = output;
+    }
+
+</script>
+<p id = "chuoi2"></p>
+</body>
+</html>
