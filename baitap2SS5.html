@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<input type="text" id="nhapdulieu" placeholder="Nhập từ cần dịch" value="dichtienganh">
+<button onclick="dich()" type="button">Dịch</button>
+<script>
+    let tienganh = ["hello", "goodbye", "thank you", "sorry", "sad", "happy"];
+    let tiengviet = ["xin chào", "tạm biệt", "cảm ơn", "xin lỗi", "buồn", "vui"];
+    function dich() {
+        for (let i = 0; i < tienganh.length; i++) {
+            if (tienganh[i] == document.getElementById("nhapdulieu").value) {
+                alert("tu do co nghia la " + tiengviet[i])
+            } else alert("khong tim thay tu can tim")
+            break;
+        }
+    }
+</script>
+</body>
+</html>
