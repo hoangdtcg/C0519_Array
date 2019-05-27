@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+            <input type="text" id="nhap">
+            <button type="text" id="inra" onclick="dich()"> Dich</button>
+<body>
+            <script>
+                let arrE = ["love","sad"];
+                let arrV = ["yeu", "buon"];
+                function dich() {
+                    let a = document.getElementById("nhap").value;
+                    for(i = 0; i < arrE.length; i++){
+                        if(arrE[i] === a){
+                            a = arrV[i];
+                        }
+                    }
+                    document.getElementById("result").innerHTML = a;
+
+                }
+
+            </script>
+</body>
+<p type="text" id="result"></p>
+
+</html>

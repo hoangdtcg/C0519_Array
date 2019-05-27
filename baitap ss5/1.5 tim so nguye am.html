@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tim so nguyen am</title>
+</head>
+<body>
+<input id="number">
+<button onclick="add_number()"> ADD</button>
+<button onclick="nguyen_am()"> Kiem tra</button>
+<p id="result"></p>
+<script>
+    let x = 0;
+    let arr = [];
+
+    function add_number() {
+        arr[x] = document.getElementById("number").value;
+        x++;
+        document.getElementById("number").value = "";
+
+    }
+
+    function nguyen_am() {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] < 0) {
+                let a = arr[i];
+                document.write(a + "<br>");
+
+            }
+
+        }
+
+    }
+</script>
+</body>
+</html>

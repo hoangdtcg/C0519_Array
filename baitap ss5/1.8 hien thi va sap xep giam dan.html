@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <input id="number">
+        <button onclick="ADD_number()"> ADD </button>
+        <button onclick="display()"> DISPLAY</button>
+        <p id="result"></p>
+        <script>
+            let arr = [];
+            let x = 0;
+            function ADD_number() {
+                arr[x] = parseInt(document.getElementById("number").value);
+                alert("Element" + arr[x] + "vao vi tri" + x);
+                x++;
+                document.getElementById("number").value ="";
+            }
+            function display(){
+                arr.sort();
+                arr.reverse();
+                let display = "<hr>";
+                for(let i = 0; i < arr.length; i++){
+                    display += " Element " + i + " = " + arr[i] + "<br/>";
+                }
+
+                document.getElementById("result").innerHTML = display ;
+            }
+
+        </script>
+</body>
+</html>

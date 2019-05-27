@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tick toc toe</title>
+</head>
+<body>
+<h1> CARO</h1>
+<p id="carogame"></p>
+<input type="button" onclick="change()" value="changevalue1">
+<input type="button" onclick="change2()" value="changevalue2">
+<script>
+    let a = document.getElementById("carogame");
+    let board = [];                 // hien thi ban co
+    let data = "";                  // luu chu cac du lieu nhap vao thay doi trong bang
+    for (let i = 0; i < 10; i++) {
+        board[i] = Array(".", ".", ".", ".", ".", ".", ".", ".", ".", ".",);
+
+    }
+    for (let i = 0; i < 10; i++) {
+        data += "<br/>";
+        for (let j = 0; j < 10; j++) {
+            data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+        }
+    }
+
+    a.innerHTML = data;
+
+    function change() {
+        // tao 2 gia tri dong va cot de hien thi
+        let positionX = prompt("X: ");
+        let positionY = prompt("y: ");
+        data = "";
+        board[positionX][positionY] = "X";
+        for (let i = 0; i < 10; i++) {
+            data += "<br>";
+            for (let j = 0; j < 10; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp";
+            }
+        }
+        a.innerHTML = "<hr/>" + data;
+
+        for (let i = 0; i < 10; i++) {
+            for (let j = 0; j < 10; j++) {
+                if (board[i + 1][j] === "X" && board[i + 2][j] === "X" && board[i][j] === "X") {
+                    alert("win win win");
+                } else if (board[i][j + 1] === "X" && board[i][j + 2] === "X" && board[i][j] === "X") {
+                    alert("win win win");
+                } else if (board[i + 1][j + 1] === "X" && board[i + 2][j + 2] === "X" && board[i][j] === "X") {
+                    alert("win win win");
+                }
+            }
+            a.innerHTML = data + "<hr/>";
+        }
+    }
+        function change2() {
+            let X = parseInt(prompt("X: "));
+            let Y = parseInt(prompt("Y: "));
+            data = "";
+            if (board[X][Y] === "X") {
+                alert("danh vi tri khac");
+            } else {
+                board[X][Y] = "0";
+                for (let i = 0; i < 10; i++) {
+                    data += "<br>";
+                    for (let j = 0; j < 10; j++) {
+                        data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp";
+                    }
+                }
+                a.innerHTML = data + "<hr/>";
+            }
+
+            for (let i = 0; i < 10; i++) {
+                for (let j = 0; j < 10; j++) {
+                    if (board[i][j] === "0" && board[i + 2][j] === "0" && board[i + 1][j] === "0") {
+                        alert("win win win");
+                    } else if (board[i][j] === "0" && board[i][j + 2] === "0" && board[i][j + 1] === "0") {
+                        alert("win win win");
+                    } else if (board[i][j] === "0" && board[i + 2][j + 2] === "0" && board[i + 1][j + 1] === "0") {
+                        alert("win win win");
+                    }
+                }
+                a.innerHTML = data + "<hr/>";
+            }
+        }
+
+
+</script>
+</body>
+</html>

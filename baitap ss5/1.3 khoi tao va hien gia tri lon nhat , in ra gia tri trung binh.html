@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>khoi tao, in ra gtri lon nhat, gia tri tb</title>
+</head>
+<body>
+            <input id="number">
+            <button onclick="add_number()"> ADD </button>
+            <button onclick="numbermax()">NumberMax</button>
+            <button onclick="average_value()"> Average_value</button>
+            <p id="result"></p>
+        <script>
+            let arr = Array();
+            let x = 0;
+            function add_number() {
+                arr[x] = parseInt(document.getElementById("number").value);
+                x++;
+                document.getElementById("number").value = "";
+            }
+            function numbermax() {
+                max = 0;
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i] > max) {
+                        max = arr[i];
+
+                    }
+                }
+                document.getElementById("result").innerHTML = "gia tri lon nhat la : " + max + "<hr/>"  + " <br/>";
+            }
+            function average_value() {
+                let total = 0;
+                let average;
+                    for (let i = 0; i < arr.length; i++) {
+                        total += arr[i];
+                    }
+                average = total/arr.length;
+                document.getElementById("result").innerHTML = average;
+            }
+
+
+        </script>
+</body>
+</html>

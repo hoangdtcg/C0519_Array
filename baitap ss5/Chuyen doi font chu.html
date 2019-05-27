@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyen doi cac chu in hoa thanh chu thuong va nguoc lai</title>
+</head>
+<body>
+        <input type="text" id="font">
+        <button type="button" onclick="changefont()"> Click now </button><br/>
+        <input id ='result'> Hien thi</input>
+        <script>
+           function changefont() {
+               let str = document.getElementById("font");
+               let upper = "ABCDEFGHIKLMNOPQRSTUVWXYZ";
+               let lower = 'abcdefghiklmnopqrstuvwxyz';
+               let result = [str[0]];
+               for (let i = 0; i < str.length; i++) {
+                   if (upper.indexOf(str[i] !== -1)) {
+                       result.push(str[i].toLowerCase());
+                   } else if (lower.indexOf(str[i] !== -1)) {
+                       result.push(str[i].toUpperCase());
+                   } else {
+                       result.push(str[i]);
+                   }
+               }
+           }
+           document.getElementById("result").innerText = result;
+        </script>
+</body>
+</html>
