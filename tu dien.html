@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let text = prompt(" Nhap 1 chu: ");
+    let eng_dictionary = ["pink", "purple", "green", "black"];
+    let viet_dictionary = ["hong", "tim", "xanh", "den"];
+    let flag = false;
+    for (let i = 0; i < eng_dictionary.length; i++) {
+        if (eng_dictionary[i] === text) {
+            alert(text + "nghia la" + viet_dictionary[i]);
+            flag=true;
+        }
+    }
+    if (flag=== false){
+        alert("khong tim thay");
+    }
+</script>
+</body>
+</html>
