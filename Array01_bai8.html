@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="add" type="text">
+<button type="button" onclick="add_array()">Add</button>
+<input id="show" type="text"><br>
+<button type="button" onclick="sapxep()">Check</button>
+<script>
+    let a = Array();
+    let x = 0;
+    //let n = Array();
+    function add_array() {
+        a[x] = document.getElementById("add").value;
+        alert("nhap gia tri: " + a[x] + " vao vi tri: " + x);
+        x ++;
+        document.getElementById("show").value = a.join();
+    }
+    function sapxep() {
+        a.sort(function (i,j) {
+            return j - i;
+        })
+        alert("mang duoc sap xep lai: " + a.join())
+    }
+
+</script>
+</body>
+</html>

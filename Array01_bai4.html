@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="add" type="text">
+<button type="button" onclick="add_array()">Add</button>
+<input id="show" type="text"><br>
+<button type="button" onclick="daonguoc()">Check</button>
+<script>
+    let a = Array();
+    let x = 0;
+    let n = Array();
+    function add_array() {
+        a[x] = document.getElementById("add").value;
+        alert("nhap gia tri: " + a[x] + " vao vi tri: " + x);
+        x ++;
+        document.getElementById("show").value = a.join();
+    }
+    function daonguoc() {
+        let j = a.length -1;
+        for (let i = j; i >= 0; i --) {
+            n[j - i] = a[i];
+        }
+        alert("mang nguoc lai cua mang ban dau la: " + n.join())
+    }
+
+</script>
+</body>
+</html>
