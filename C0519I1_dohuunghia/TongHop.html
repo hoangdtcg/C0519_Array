@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div> Sample Screen :</div>
+<table>
+    <tr>
+        <th><input type = "text" id = "elm"></th>
+        <th><button onclick = "add()" >Add</button></th>
+        <th><button onclick = "display()" >Display</button></th>
+        <th><button value = "C" onclick="elm.value = elm.value.substr(0,elm.value.length - 1)">C</button></th>
+        <th><button onclick="searchmax()">Max</button></th>
+    </tr>
+</table>
+<script>
+    let mang = [];
+
+    function add() {
+        let a = parseInt(document.getElementById("elm").value);
+        mang.push(a);
+    }
+    function display() {
+        let b = "";
+        for (let i = 0; i < mang.length; i ++){
+            b += "Element " + i + " = " + mang[i] + "<br>";
+        }
+        document.getElementById("elm1").innerHTML = b;
+    }
+
+    let temp;
+    function reverse() {
+        for (let i = 0; i < mang.length /2; i++){
+            temp = mang[i];
+            mang[i] = mang[mang.length - i - 1];
+            mang[mang.length - i - 1] = temp;
+        }
+        document.getElementById("elm2").innerHTML = mang;
+    }
+
+    function search(){
+        let a = parseInt(document.getElementById("number").value);
+        let b = '';
+        for ( let i = 0; i < mang.length; i++){
+            if( a === mang[i]){
+                b = "Vi tri phan tu " + a + " trong mang la " + i ;
+            }
+        }
+        document.getElementById("number1").innerHTML = b;
+    }
+
+
+    function searchmax() {
+        let max = mang[0];
+        for ( let i = 1; i < mang.length - 1; i ++) {
+            if(mang[i] > max ){
+                max = mang[i];
+            }
+        }
+        document.getElementById("number2").innerHTML = "Phan tu lon nhat trong mang la : " + max;
+    }
+</script>
+<table>
+    <tr>
+        <th><button  id = "elm2" onclick="reverse()">Reverse</button></th>
+    </tr>
+    <tr>
+        <th><input type = "text" id = "number" placeholder="Nhap vao so muon search"></th>
+        <th><button onclick="search()"> Search</button></th>
+    </tr>
+</table>
+<p id = "elm1"></p>
+<p id = "number1"></p>
+<p id = "number2"></p>
+</body>
+</html>

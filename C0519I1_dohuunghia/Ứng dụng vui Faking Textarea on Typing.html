@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faking Textarea</title>
+</head>
+<center><h2>GO GO GO</h2>
+    <form name="HuuNghia">
+        <textarea name="txt" cols="40" rows="10" onkeydown="typeTextarea();"></textarea>
+    </form></center>
+<body>
+<title>Gõ đến die</title>
+<script>
+    let a= " anh đếch cần gì ngoài em",
+        n= "";
+
+    function typeTextarea(){
+        t = document.HuuNghia.txt.value;
+        j = t.length;
+        if(j > 0)
+        {
+            for(let i=1; i<=j; i++)
+            {
+                n = n + a[i];
+                if(i == 23)
+                {
+                    document.HuuNghia.txt.value = "";
+                    n = "";
+                }
+            }
+        }
+        document.HuuNghia.txt.value = n;
+        n="";
+        setTimeout("typeTextarea()", 1);
+    }
+</script>
+</body>
+</html>

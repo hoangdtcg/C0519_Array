@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="sortArray()">Click</button>
+<script>
+    let mang = [];
+    let count = 0;
+    while (count < 10 ){
+        mang.push(parseInt(prompt("")));
+        count++;
+    }
+    function sortArray() {
+        for ( let i = 0; i < mang.length; i++){
+            for (let j = 1; j < mang.length; j++){
+                if ( mang[j] > mang[j - 1]){
+                    let temp = mang[j - 1];
+                    mang[j -1] = mang[j];
+                    mang[j] = temp;
+                }
+            }
+        }
+
+        let display = '';
+        for ( let i = 0; i < mang.length; i++){
+            display += mang[i] + " ";
+        }
+        document.getElementById("number1").innerHTML = "Mang sap xep tang dan la : " + display;
+    }
+
+</script>
+<p id = "number1"></p>
+</body>
+</html>

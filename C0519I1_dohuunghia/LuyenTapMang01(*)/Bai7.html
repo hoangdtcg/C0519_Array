@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id = "number" placeholder="Nhap so muon tim">
+<button onclick="clear1()">Clear</button>
+<script>
+    let mang = [];
+    let count = 0;
+    while (count < 10 ){
+        mang.push(parseInt(prompt("")));
+        count++;
+    }
+    function clear1(){
+        let a = parseInt(document.getElementById("number").value);
+        let i1;
+        for ( let i = 0; i < mang.length; i++){
+            if ( mang[i] === a){
+                i1 = i;
+                break;
+            }
+        }
+        for ( ; i1 < mang.length; i1++){
+            if(i1 !== mang.length - 1){
+                mang[i1] = mang[i1 + 1];
+            } else {
+                mang[i1] = 0;
+                break;
+            }
+
+        }
+
+        let display = '';
+        for ( let i = 0; i < mang.length; i++){
+            display += mang[i] + " ";
+        }
+        document.getElementById("number1").innerHTML = "Cac phan tu trong mang la : " + display;
+    }
+
+</script>
+<p id = "number1"></p>
+</body>
+</html>

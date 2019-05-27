@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id = "number" placeholder="Nhap mot so ">
+<button onclick="check()">Check</button>
+<script>
+    let mang = [];
+    let count = 0;
+    while (count < 10 ){
+        mang.push(parseInt(prompt("")));
+        count++;
+    }
+    function check(){
+        let number1 = parseInt(document.getElementById("number").value);
+        let output = '';
+        for ( let i = 0; i < mang.length; i++){
+            if (mang[i] === number1){
+               output = number1 + " is in the array";
+                break;
+            } else if (i === mang.length - 1) {
+                output = number1 + " is not in the array";
+            }
+        }
+        document.getElementById("number2").innerHTML = output;
+    }
+</script>
+<p id = "number2"></p>
+</body>
+</html>

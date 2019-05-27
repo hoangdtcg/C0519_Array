@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="disPlay1()">Display</button>
+<script>
+    let mang = [];
+    let i = 0;
+    while (i < 10 ){
+        mang.push(parseInt(prompt("")));
+        i++;
+    }
+    function disPlay1(){
+        let display = '';
+        for ( let i = 0; i < mang.length; i++){
+            display += mang[i] + " ";
+        }
+        document.getElementById("number2").innerHTML = "Cac phan tu trong mang la : " + display;
+
+        let count = 0;
+        let display1 = '';
+        for ( let i = 0; i < mang.length; i++){
+            if ( mang[i] >= 10){
+                display1 += mang[i] + " ";
+                count++;
+            }
+        }
+        document.getElementById("number").innerHTML = "Co " + count + " phan tu lon hon hoac bang 10";
+        document.getElementById("number1").innerHTML = "Cac phan tu do la : " + display1;
+    }
+</script>
+<p id = "number2"></p>
+<p id = "number"></p>
+<p id = "number1"></p>
+</body>
+</html>

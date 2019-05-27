@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Co Caro</title>
+</head>
+<body>
+<h1 style ="text-align: center; ">Co Caro</h1>
+<p id="carogame"></p>
+<input type="button" value="Player1" onclick="coCaro1()">
+<input type="button" value="Player2" onclick="coCaro2()">
+<script>
+    let b = document.getElementById("carogame");
+
+
+    let caro = [];
+    let data = "";
+    for ( let i = 0; i < 15; i++){
+        caro[i] = new Array(".",".",".",".",".",".",".",".",".",".",".",".",".",".",".");
+    }
+    for ( let i = 0; i < 15; i++){
+        data += "<br/>";
+        for ( let j = 0; j < 15; j++){
+            data += caro[i][j] + "&nbsp;&nbsp;";
+        }
+    }
+
+    data += "<br/><br/>";
+    b.innerHTML = data;
+
+    function coCaro1() {
+        let positionX = prompt("X: ");
+        let positionY = prompt("Y: ");
+        data = "";
+        caro[positionX][positionY] = "x";
+        for (let i = 0; i < 15; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 15; j++) {
+                data += caro[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        for ( let i = 0; i < 15; i++){
+            for ( let j = 0; j < 15; j++){
+                if(caro[i][j] === "x" && caro[i + 1][j] === "x" && caro[i + 2][j] === "x"){
+                    alert("Player1 win");
+                } else if (caro[i][j] === "x" && caro[i][j + 1] === "x" && caro[i][j + 2] === "x"){
+                    alert("Player1 win");
+                } else if (caro[i][j] === "x" && caro[i+1][j+1] === "x" && caro[i+2][j+2] === "x"){
+                    alert("Player1 win");
+                }
+            }
+        }
+        b.innerHTML = "<hr/>" + data;
+    }
+
+    function coCaro2() {
+        let positionX = prompt("X: ");
+        let positionY = prompt("Y: ");
+        data = "";
+        caro[positionX][positionY] = "o";
+        for (let i = 0; i < 15; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 15; j++) {
+                data += caro[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        for ( let i = 0; i < 15; i++){
+            for ( let j = 0; j < 15; j++){
+                if(caro[i][j] === "o" && caro[i + 1][j] === "o" && caro[i + 2][j] === "o"){
+                    alert("Player2 win");
+                } else if (caro[i][j] === "o" && caro[i][j + 1] === "o" && caro[i][j + 2] === "o"){
+                    alert("Player2 win");
+                } else if (caro[i][j] === "o" && caro[i+1][j+1] === "o" && caro[i+2][j+2] === "o"){
+                    alert("Player2 win");
+                }
+            }
+        }
+        b.innerHTML = "<hr/>" + data;
+    }
+</script>
+</body>
+</html>
