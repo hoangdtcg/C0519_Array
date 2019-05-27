@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>Type anthing alowly<br><br>
+<form name="f">
+<textarea name="txt" onkeydown="typing()" cols="30" rows="10"></textarea>
+</form>
+</center>
+<script>
+    let a = [];
+    a[1] = "I"; a[2] = "'"; a[3] = "M"; a[4] = " "; a[5] = "H"; a[6] = "A"; a[7] = "N"; a[8] = "D"; a[9] = "S"; a[10] = "O";
+    a[11] = "M"; a[12] = "E"; a[13] = "!"; a[14] = "";
+    let n = "";
+    function typing()
+    {
+        t = document.f.txt.value;
+        j = t.length;
+        if (j > 0)
+        {
+            for (let i = 1; i <= j; i++)
+            {
+                n += a[i];
+                if (j == 14)
+                {
+                    document.f.txt.value = "";
+                    n = "";
+                }
+            }
+        }
+            document.f.txt.value = n;
+            n = "";
+            setTimeout("typing()",1);
+    }
+</script>
+</body>
+</html>
