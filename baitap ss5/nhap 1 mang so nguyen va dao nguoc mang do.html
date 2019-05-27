@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nhap  1 mang so nguyen va dao nguoc cac phan tu </title>
+</head>
+<body>
+        <h1> dao nguoc</h1>
+        <input id="number">
+        <button value="add" onclick="add_number()"> ADD </button><br/>
+        <button value="reverse" onclick="reverse()"> Reverse </button>
+        <p id="result"></p>
+        <p1 id="result2"></p1>
+                <script>
+                    let x = 0;
+                    let arr = Array();
+                    function add_number() {
+                        arr[x] = parseInt(document.getElementById("number").value);
+                        x++;
+                        document.getElementById("number").value = "";
+                    }
+                    function reverse() {
+                        let y = "<hr/>";
+                        for(i = 0; i < arr.length; i++){
+                            y += "Element" + i + " = " + arr[i] + "<br/>";
+                        }
+                            document.getElementById("result").innerHTML = y;
+                         let z = arr.reverse();
+                        document.getElementById("result2").innerHTML = z;
+                    }
+
+                </script>
+</body>
+</html>

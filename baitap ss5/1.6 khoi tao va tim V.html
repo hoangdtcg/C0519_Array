@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="value">
+<button onclick="add_value()"> ADD</button>
+<button onclick="test()"> Test</button>
+<p id="result"></p>
+<script>
+    let x = 0;
+    let arr = [];
+
+    function add_value() {
+        arr[x] = document.getElementById("value").value;
+        x++;
+        document.getElementById("value").value = "";
+    }
+
+    function test() {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === "V") {
+                document.write("V is in the arry");
+            }else{
+                document.write("V is not in the arry")
+            }
+        }
+
+
+    }
+</script>
+</body>
+</html>
