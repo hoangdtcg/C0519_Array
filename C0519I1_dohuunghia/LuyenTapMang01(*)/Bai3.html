@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type = "text" id = "number1" placeholder="Nhap so phan tu trong mang">
+<button onclick="add()">Add</button>
+<button onclick="displayMax()">Max</button>
+<button onclick="Average()">Average</button>
+<script>
+    let mang = [];
+    function add(){
+        let a = parseInt(document.getElementById("number1").value)
+        let count = 0;
+        while (count < a ){
+            mang.push(parseInt(prompt("")));
+            count++;
+        }
+    }
+
+    function displayMax() {
+        let display = '';
+        for (let i = 0; i < mang.length; i++) {
+            display += mang[i] + " ";
+        }
+        document.getElementById("number").innerHTML = "Cac phan tu trong mang la : " + display;
+        let max = mang[0];
+        for (let i = 1; i < mang.length; i++) {
+            if (mang[i] > max) {
+                max = mang[i];
+            }
+        }
+        document.getElementById("max").innerHTML = "Phan tu lon nhat trong mang la : " + max;
+    }
+    function Average(){
+        let sum = mang[0];
+        let average ;
+        for (let i = 1 ; i < mang.length; i++){
+            sum += mang[i];
+        }
+        average = sum/ mang.length;
+        document.getElementById("number2").innerHTML = "Gia tri trung binh cua cac phan tu trong mang la : " + average;
+    }
+</script>
+<p id ="number"></p>
+<p id = "max"></p>
+<p id ="number2"></p>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="searchmax()">Max</button>
+<script>
+    let arr = [5,7,1,9,10,6,3,4,2];
+    let max = arr[0];
+    function searchmax() {
+        for ( let i = 1; i < arr.length - 1; i ++) {
+                if(arr[i] > max ){
+                    max = arr[i];
+                }
+            }
+        document.write(max);
+    }
+</script>
+</body>
+</html>

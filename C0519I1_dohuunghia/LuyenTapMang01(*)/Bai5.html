@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let chuoi = prompt("Nhap vao mot chuoi");
+    let count = 0;
+    for ( let i = 0; i < chuoi.length; i++){
+        if (chuoi.charAt(i) === "-"){
+            count++;
+        }
+    }
+    document.write("So nguyen am trong chuoi " + chuoi + " la : " + count);
+</script>
+</body>
+</html>

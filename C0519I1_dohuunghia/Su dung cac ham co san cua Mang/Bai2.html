@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type = "text" id ="number" placeholder="Nhap 1 so">
+<button onclick="display1()">Display</button>
+<script>
+    function display1(){
+        let numBer = document.getElementById("number").value;
+        let display = '';
+        for (let i = 0; i < numBer.length; i++){
+            if ( parseInt(numBer.charAt(i)) % 2 === 0 && parseInt(numBer.charAt(i + 1)) % 2 === 0){
+                display += numBer.charAt(i) + "-";
+            } else {
+                display += numBer.charAt(i);
+            }
+        }
+        document.getElementById("number1").innerHTML = display;
+    }
+
+</script>
+<p id = "number1"></p>
+</body>
+</html>

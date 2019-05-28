@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="displayMax()">Max</button>
+<script>
+    let mang = [];
+    let count = 0;
+    while (count < 10 ){
+        mang.push(parseInt(prompt("")));
+        count++;
+    }
+    function displayMax() {
+        let display = '';
+        for ( let i = 0; i < mang.length; i++){
+            display += mang[i] + " ";
+        }
+        document.getElementById("number").innerHTML = "Cac phan tu trong mang la : " + display;
+        let max = mang[0];
+        for ( let i = 1; i < mang.length; i++){
+            if (mang[i] > max){
+                max = mang[i];
+            }
+        }
+
+        let j1;
+        for ( let j = 0; j < mang.length; j++){
+            if( mang[j] === max){
+                j1 = j;
+            }
+        }
+        document.getElementById("max").innerHTML = "Phan tu lon nhat trong mang la : " + max + " co vi tri thu " + j1 + " trong mang";
+    }
+
+</script>
+<p id ="number"></p>
+<p id = "max"></p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th><input type = "text" id = "add1" ></th>
+        <th><button onclick = " add()" >Add</button></th>
+        <th><button value = "C" onclick="add1.value = '' ">C</button></th>
+        <th><button onclick = "connect()" >Connect</button></th>
+    </tr>
+</table>
+<script>
+    let mang = [];
+
+    function add() {
+        let a = document.getElementById("add1").value;
+        mang.push(a);
+    }
+    function connect() {
+       let connect1 = mang.join();
+       document.getElementById("add2").innerHTML = connect1;
+    }
+</script>
+<p id = "add2"></p>
+</body>
+</html>

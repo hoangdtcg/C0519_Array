@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type = "text" id = "number1" placeholder="Nhap so phan tu trong mang">
+<button onclick="add()">Add</button>
+<button onclick="display1()">Display</button>
+<button onclick="changeArray()">Change</button>
+<script>
+    let mang = [];
+    function add(){
+        let a = document.getElementById("number1").value;
+        let count = 0;
+        while (count < a ){
+            mang.push(prompt(""));
+            count++;
+        }
+    }
+    function display1() {
+        let display = '';
+        for ( let i = 0; i < mang.length; i++){
+            display += mang[i] + " ";
+        }
+        document.getElementById("number2").innerHTML = "Cac phan tu trong mang la : " + display;
+    }
+    function changeArray() {
+        for ( let i = 0; i < mang.length; i++){
+            if (mang[i] === "-"){
+                mang[i] = "_";
+            }
+        }
+        let display2 = '';
+        for ( let i = 0; i < mang.length; i++){
+            display2 += mang[i] + " ";
+        }
+        document.getElementById("number3").innerHTML = "Cac phan tu trong mang la : " + display2;
+    }
+</script>
+<p id = "number2"></p>
+<p id = "number3"></p>
+</body>
+</html>

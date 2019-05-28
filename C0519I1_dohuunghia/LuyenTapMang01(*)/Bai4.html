@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type = "text" id = "number1" placeholder="Nhap so phan tu trong mang">
+<button onclick="add()">Add</button>
+<button onclick="reverse()">Reverse</button>
+<script>
+    let mang = [];
+    function add(){
+        let a = parseInt(document.getElementById("number1").value)
+        let count = 0;
+        while (count < a ){
+            mang.push(parseInt(prompt("")));
+            count++;
+        }
+    }
+    function reverse() {
+        let display = '';
+        for (let i = 0; i < mang.length; i++) {
+            display += mang[i] + " ";
+        }
+        document.getElementById("number").innerHTML = "Cac phan tu trong mang la : " + display;
+
+        let reverse1 = [];
+        for ( let i = mang.length - 1; i >= 0; i--){
+            reverse1.push(mang[i]);
+        }
+        let display1 = '';
+        for (let i = 0; i < reverse1.length; i++) {
+            display1 += reverse1[i] + " ";
+        }
+        document.getElementById("number2").innerHTML = "Dao nguoc cac phan tu trong mang : " + display1;
+    }
+</script>
+<p id ="number"></p>
+<p id ="number2"></p>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id = "Color">
+<button onclick="color()"> Mean</button>
+<script>
+    function color(){
+        let english = ["white", "pink", "red", "black", "green", "blue", "yeallow", "orange", "sliver", "brown", "gray", "purple"];
+        let vietnamese = ["trắng", "hồng", "đỏ", "đen", "xanh da trời", "xanh lá cây", "vàng", "cam", "bạc", "nâu", "xám", "tím"];
+        let color1 = document.getElementById("Color").value;
+        let mean = '';
+        for (let i = 0; i < english.length; i++){
+            if ( color1 === english[i]){
+                mean = "Màu " + vietnamese[i];
+            }
+        }
+        document.getElementById("Color1").innerHTML = mean;
+    }
+</script>
+<p id = "Color1"></p>
+</body>
+</html>
