@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Translate to vietnamese<br><br>
+English<br>
+<input id="en" type="text"><br><br>
+<button onclick="dich()" type="button">Translate</button>
+<br><br>
+Vietnamese<br>
+<input type="text" id="vi">
+<script>
+    function dich() {
+        let english = ["table", "pen", "cup", "laptop"];
+        let vietnam = ["cái bàn", "cái bút", "cái cốc", "máy tính xách tay"];
+        let e = document.getElementById("en").value;
+        for (let i = 0; i < english.length; i++) {
+            if (e === english[i]) {
+                document.getElementById("vi").value = vietnam[i];
+                break;
+            }
+            else {
+                document.getElementById("vi").value = "Not find";
+                }
+        }
+    }
+</script>
+</body>
+</html>

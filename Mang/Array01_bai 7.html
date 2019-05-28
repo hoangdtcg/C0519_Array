@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="array" >
+<button id="add" type="button" onclick="add_to_array()">Add</button><br><br>
+<input id="v" type="text">
+<button id="check" type="button" onclick="kiemtra()">Check</button><br><br>
+Result<br>
+<input id="result" type="text">
+<script>
+    let a = Array();
+    let x = 0;
+    function add_to_array() {
+        a[x] = document.getElementById("array").value;
+        alert("nhap so: " + a[x] + " vao mang");
+        x++;
+    }
+    function kiemtra() {
+        let v = document.getElementById("v").value;
+        for (let i = 0; i < a.length; i ++) {
+            if (v === a[i]) {
+                let pos = i;
+                let n = 1;
+                a.splice(pos,n);
+                break;
+            }
+        }
+        document.getElementById("result").value = a.join();
+    }
+</script>
+</body>
+</html>
