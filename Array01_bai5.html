@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [-1,1,0,4,-5,-1.5,-6,-2,2.5];
+    let SNA = 0;
+    for (let i = 0; i < a.length; i ++) {
+        if (parseInt(a[i]) == a[i]) {
+            if (a[i] < 0) {
+                SNA += 1;
+            }
+        }
+    }
+    alert("co " + SNA + " so nguyen am trong mang")
+</script>
+</body>
+</html>

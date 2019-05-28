@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [ 2,4,65,76,4,23,17,26,0,-1];
+    let b = [3,0,-5,-26,26,12,-6,0,99,28];
+    let c = Array();
+    for (let i = 0; i < 20; i ++) {
+        if (i <= 9) {
+            c[i] = b[i];
+        } else {
+            c[i] = a[i - 10];
+        }
+    }
+    alert("mang c bao gom mang b noi vs mang a:" + c.join());
+</script>
+</body>
+</html>

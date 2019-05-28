@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = ['a',3,5,'c','b',1];
+    let  A = Array();
+    for (let i = arr.length -1; i >= 0; i --) {
+        A[arr.length - 1 -i] = arr[i];
+    }
+    alert('"' + A.join('') + '"');
+</script>
+</body>
+</html>

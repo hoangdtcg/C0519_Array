@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = prompt("nhap chuoi 1");
+    let b = prompt("nhap chuoi 2");
+    let stra = a.toString();
+    let strb = b.toString();
+    let count = 0;
+    if ((stra.length - strb.length) != 0) {
+        alert("2 chuoi khong giong nhau")
+    }
+    for (let i = 0; i < stra.length; i ++) {
+        if (stra[i] !== strb[i]) {
+            count ++;
+        }
+    }
+    if (count == 0) {
+        alert("2 chuoi giong nhau");
+    } else {
+        alert("2 chuoi khong giong nhau");
+    }
+</script>
+</body>
+</html>
